@@ -1,4 +1,4 @@
-#but {
+.but {
   margin-left: 10px;
   background-color: aquamarine;
 
@@ -7,4 +7,8 @@
 html {
   background-color: lightgrey;
   font-family:'Montserrat', sans-serif; 
+}
+#text{
+  font-style: italic;
+  color: blue;
 }
