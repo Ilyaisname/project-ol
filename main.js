@@ -4,7 +4,7 @@
 function createUl() {
   let ul = document.createElement('ul');
   let li = '';
-  // let but; 
+  
 
   arr.forEach(element => {
     li += '<li>' + element + `<button class='but'> remove </button>` + '</li>';
@@ -16,16 +16,9 @@ function createUl() {
 
   document.querySelectorAll('.but').forEach(elem => {
     elem.onclick = function() {
-      document.querySelector('li').remove();
+     this.parentElement.remove();
     }
   });
-  /*
-  for (elem of but) {
-    elem.onclick = function() {
-      document.querySelector('li').remove();
-    }
-  }
-  */
 }
 
 createUl(arr);
