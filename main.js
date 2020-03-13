@@ -21,4 +21,8 @@ function createUl() {
 
 createUl(arr);
 
+let ban = arr.findIndex(item => item === 'banana');
+arr.splice(ban, ban);
+
+console.log(arr);
 
