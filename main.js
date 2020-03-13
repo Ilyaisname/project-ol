@@ -9,20 +9,20 @@ function createUl() {
   });
 
   ul.innerHTML = li;
-   
+  
   document.body.append(ul);
 
   document.querySelectorAll('.but').forEach(elem => {
     elem.onclick = function() {
-     this.parentElement.remove();
+      this.parentElement.remove();
+      arr.find((item, index) => {
+       if (item === this.previousSibling.data) {
+         arr.splice(index, 1);
+        }
+      });
     }
   });
 }
 
 createUl(arr);
-
-let ban = arr.findIndex(item => item === 'banana');
-arr.splice(ban, ban);
-
-console.log(arr);
 
