@@ -11,7 +11,7 @@ function createUl() {
   let li = '';
 
   arr.forEach(element => {
-    li += '<li>' + element.name + `<button class='but'> remove </button>` + '</li>';
+    li += `<li id=${element.id}>` + element.name + `<button class='but'> remove </button>` + '</li>';
   });
 
   ul.innerHTML = li;
@@ -19,13 +19,15 @@ function createUl() {
   document.body.append(ul);
   
   document.querySelectorAll('.but').forEach(elem => {
-    elem.onclick = function(this) {
+    elem.onclick = function() {
+      let id = this.parentNode.getAttribute('id');
       this.parentElement.remove();
-      // arr.map((item, index) => {
-      //  if (item ===  ) {
-      //    arr.splice(index, 1);
-      //   }
-      // });
+      console.log(id);
+      arr.map((item, index) => {
+       if (item.id === id ) {
+         arr.splice(index, 1);
+        }
+      });
     }
   });
 }
