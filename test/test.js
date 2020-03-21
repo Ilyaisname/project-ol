@@ -1,4 +1,4 @@
-
+/*
 let arr = [
   {name: 'one', id: 1},
   {name: 'two', id: 2},
@@ -17,3 +17,21 @@ function delElem(num) {
 }
 
 console.log(arr);
+*/
+
+let but = document.getElementById('but');
+
+let val = [];
+
+but.addEventListener('click', function() {
+  let text = document.getElementById('inpt')
+  let value = {
+    name: text.value,
+    id: JSON.stringify(Date.now())
+  }
+
+  val.push(value)
+  alert(value);
+});
+
+
