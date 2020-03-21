@@ -34,3 +34,29 @@ function createUl() {
 
 createUl(arr);
 
+function createInputText() {
+  let block = document.createElement('div');
+  let ol = document.querySelector('ul');
+
+  block.innerHTML= `<label for='inpt'> Fruits:</label>
+  <input id='inpt' type="text" > <button id='but'>click me</button>`;
+  
+  ol.after(block);
+
+  let but = document.getElementById('but');
+
+  but.addEventListener('click', function() {
+    let text = document.getElementById('inpt')
+    let value = {
+      name: text.value,
+      id: JSON.stringify(Date.now())
+    }
+  
+    arr.push(value)
+    console.log(value);
+    text.value='';
+
+  });
+}
+
+createInputText();
