@@ -22,15 +22,19 @@ function createUl() {
   document.querySelectorAll('.but').forEach(elem => {
     elem.onclick = function() {
       let id = this.parentNode.getAttribute('id');
-      this.parentElement.remove();
+      
       console.log(id);
+      
       arr.map((item, index) => {
        if (item.id === id ) {
          arr.splice(index, 1);
         }
       });
+
+      this.parentElement.remove();
     }
   });
+  
   createInputText();
 }
 
@@ -46,15 +50,24 @@ function createInputText() {
   ol.after(block);
 
   let but = document.getElementById('but');
+  let text = document.getElementById('inpt')
+  
+  but.disabled = true;
+
+  but.onblur = () => {
+    if (text.value !== '') {
+      // text.onfocus();
+      but.disabled = false;
+    }
+  };
 
   but.addEventListener('click', function() {
-    let text = document.getElementById('inpt')
     let value = {
       name: text.value,
-      id: JSON.stringify(Date.now())
+      id: Date.now().toString()
     }
   
-    arr.push(value)
+    arr.push(value);
     console.log(value);
     text.value='';
 
