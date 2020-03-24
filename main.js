@@ -51,12 +51,6 @@ function createInputText() {
 
   let but = document.getElementById('but');
   let text = document.getElementById('inpt')
-  
-  but.disabled = true;
-
-  text.addEventListener('focus', function() {
-    but.disabled = false;
-  });
 
   but.addEventListener('click', function() {
     let value = {
