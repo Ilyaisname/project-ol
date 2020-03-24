@@ -54,19 +54,18 @@ function createInputText() {
   
   but.disabled = true;
 
-  but.onblur = () => {
-    if (text.value !== '') {
-      // text.onfocus();
-      but.disabled = false;
-    }
-  };
+  text.addEventListener('focus', function() {
+    but.disabled = false;
+  });
 
   but.addEventListener('click', function() {
     let value = {
       name: text.value,
       id: Date.now().toString()
     }
-  
+      if (value.name === '') {
+        return text.focus();
+      }
     arr.push(value);
     console.log(value);
     text.value='';
