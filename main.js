@@ -9,6 +9,7 @@
 function createUl() {
   let ul = document.createElement('ul');
   let li = '';
+  document.body.innerHTML='';
 
   arr.forEach(element => {
     li += `<li id=${element.id}>` + element.name + `<button class='but'> remove </button>` + '</li>';
@@ -30,6 +31,7 @@ function createUl() {
       });
     }
   });
+  createInputText();
 }
 
 createUl(arr);
@@ -56,7 +58,9 @@ function createInputText() {
     console.log(value);
     text.value='';
 
+    createUl(arr);
+
   });
 }
 
-createInputText();
+// createInputText();
