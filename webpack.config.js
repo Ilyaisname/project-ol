@@ -1,5 +1,5 @@
 module.exports = {
-  entry: 'main',
+  entry: 'main.js',
 
   mode: 'development',
 

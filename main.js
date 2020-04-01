@@ -1,3 +1,5 @@
+ const message = require('modul1.js')
+
  let arr = [
    {name: 'apples', id:'2020-03-16_23:30'}, 
    {name: 'banana', id:'2020-03-16_23:31'}, 
@@ -5,7 +7,7 @@
    {name: 'mandarin', id:'2020-03-16_23:33'},
    {name: 'purl', id:'2020-03-16_23:34'}
   ];
-
+message.hi;
 function createUl() {
   let ul = document.createElement('ul');
   let li = '';
@@ -69,4 +71,3 @@ function createInputText() {
   });
 }
 
-// createInputText();

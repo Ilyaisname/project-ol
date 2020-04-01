@@ -1,1 +1,3 @@
-export let hi = alert('Are you ready?');
+export function hiAll() {
+   alert('Are you ready?');
+  }
