@@ -1,4 +1,4 @@
- const message = require('modul1.js')
+import { hiAll } from "./modules/modul1";
 
  let arr = [
    {name: 'apples', id:'2020-03-16_23:30'}, 
@@ -7,7 +7,7 @@
    {name: 'mandarin', id:'2020-03-16_23:33'},
    {name: 'purl', id:'2020-03-16_23:34'}
   ];
-message.hi;
+hiAll();
 function createUl() {
   let ul = document.createElement('ul');
   let li = '';
